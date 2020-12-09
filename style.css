@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 50%;
+  height:500px;
+  background-color: lightblue;
+  margin: auto;
+}
+
+.niveau {
+  display:flex;
+}
+.faible , .moyen,.fort {
+  width:50px;
+  height: 10px;
+}
+.faible {
+  background-color: red;
+}
+
+.moyen {
+  background-color: orange;
+}
+.fort {
+  background-color: green;
+}
