@@ -1,3 +1,4 @@
+/* Général */
 * {
   margin: 0;
   padding: 0;
@@ -6,37 +7,44 @@
 .container {
   width: 50%;
   min-width: 400px;
-  height:500px;
+  height: 500px;
   background-color: lightblue;
-  margin: auto;
+  margin: 10px auto;
 }
 
+/* Formulaire */
 .form {
   display: flex;
   justify-content: flex-end;
   background-color: orange;
-  margin: .2em 0;
-  width: 60%;
+  margin: 0.2em 0;
+  width: 90%;
   margin: auto;
   height: 50px;
 }
+
 .motDePasse {
   border: none;
   width: 70%;
-  font-size: 25px;
+  font-size: 20px;
 }
+
 .btn {
   width: 20%;
   font-size: 20px;
 }
 
+/* Securite */
 .niveau {
-  display:flex;
+  display: flex;
 }
-.faible , .moyen,.fort {
+.faible,
+.moyen,
+.fort {
   /* width:50px; */
   height: 20px;
   flex-grow: 1;
+  visibility: hidden;
 }
 .faible {
   background-color: red;
@@ -45,6 +53,13 @@
 .moyen {
   background-color: orange;
 }
+
 .fort {
   background-color: green;
+}
+
+
+/* Conseil */
+ul {
+  list-style-type: "🔒" ; 
 }
