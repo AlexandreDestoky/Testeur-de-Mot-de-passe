@@ -1,16 +1,17 @@
 const rouge = document.querySelector(".faible");
 const orange = document.querySelector(".moyen");
 const vert = document.querySelector(".fort");
-const text = document.querySelector(".text");
 const champ = document.querySelector(".motDePasse");
 const btn = document.querySelector(".btn");
-
 let carSpecial = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
 
 //Lorsqu'on clique sur l'oeil on voit le mot de passe
-btn.addEventListener("mousedown", (e) => {
-  e.preventDefault();
+btn.addEventListener("mousedown", () => {
   champ.type = "text";
+});
+
+btn.addEventListener("mouseup", () => {
+  champ.type = "password";
 });
 
 champ.addEventListener("keyup", (e) => {
@@ -23,12 +24,12 @@ let verifMDP = (motDePasse) => {
   let maj = false;
 
   //TEST Niveau 1 : longueur >= a -
-  if(motDePasse.length >= 8) {
+  if (motDePasse.length >= 8) {
     cpt++;
   }
 
   //TEST Niveua 2 : contient caractères spécial
-  if(carSpecial.test(motDePasse)){
+  if (carSpecial.test(motDePasse)) {
     cpt++;
   }
 
@@ -48,10 +49,13 @@ let verifMDP = (motDePasse) => {
   switch (cpt) {
     case 1:
       rouge.style.visibility = "visible";
+      orange.style.visibility = "hidden";
+      vert.style.visibility = "hidden";
       break;
     case 2:
       rouge.style.visibility = "visible";
       orange.style.visibility = "visible";
+      vert.style.visibility = "hidden";
       break;
     case 3:
       rouge.style.visibility = "visible";
@@ -60,6 +64,9 @@ let verifMDP = (motDePasse) => {
       break;
 
     default:
+      rouge.style.visibility = "hidden";
+      orange.style.visibility = "hidden";
+      vert.style.visibility = "hidden";
       break;
   }
 };
